@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MainAplication extends Application {
+
     @Override
     public void start(Stage stage) throws IOException {
         stage.setResizable(false);
@@ -26,19 +27,21 @@ public class MainAplication extends Application {
             event.consume();
             quit(stage);
         });
+
     }
 
     public static void main(String[] args) {
         launch();
     }
 
-    public void quit(Stage stage){
+    public void quit(Stage stage) {
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Exit Window");
         alert.setHeaderText("Za raz nastąpi wyjście z aplikacji");
         alert.setContentText("Czy jesteś pewny że chcesz wyjść z aplikacji?");
-        if(alert.showAndWait().get() == ButtonType.OK){
+
+        if (alert.showAndWait().get() == ButtonType.OK) {
             stage.close();
         }
     }
